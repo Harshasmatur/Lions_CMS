@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 40% 12%;
+    --border: 220 20% 88%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Inter", system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: "Poppins", system-ui, sans-serif;
+  }
+}
+
+/* Quill editor — restyled to match the admin theme */
+.ql-toolbar.ql-snow {
+  border-color: hsl(var(--border));
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  background: #f8fafc;
+}
+.ql-container.ql-snow {
+  border-color: hsl(var(--border));
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  min-height: 220px;
+  font-size: 0.95rem;
+}

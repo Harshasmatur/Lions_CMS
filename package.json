@@ -1,0 +1,13 @@
+{
+  "name": "lions-cms",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Lions PU College — News & Events CMS (monorepo)",
+  "workspaces": ["backend", "frontend"],
+  "scripts": {
+    "backend:dev": "npm run dev --workspace=backend",
+    "frontend:dev": "npm run dev --workspace=frontend",
+    "backend:build": "npm run build --workspace=backend",
+    "frontend:build": "npm run build --workspace=frontend"
+  }
+}

@@ -1,0 +1,40 @@
+export const CONTENT_STATUS = {
+  DRAFT: "DRAFT",
+  PUBLISHED: "PUBLISHED",
+  ARCHIVED: "ARCHIVED",
+} as const;
+
+export const MEDIA_TYPE = {
+  IMAGE: "IMAGE",
+  VIDEO: "VIDEO",
+} as const;
+
+export const MEDIA_SOURCE_TYPE = {
+  UPLOAD: "UPLOAD",
+  EXTERNAL_URL: "EXTERNAL_URL",
+  YOUTUBE: "YOUTUBE",
+  VIMEO: "VIMEO",
+} as const;
+
+export const AUDIT_ACTIONS = {
+  CREATE: "CREATE",
+  UPDATE: "UPDATE",
+  PUBLISH: "PUBLISH",
+  ARCHIVE: "ARCHIVE",
+  RESTORE: "RESTORE",
+  DELETE: "DELETE",
+  LOGIN: "LOGIN",
+  MEDIA_ADD: "MEDIA_ADD",
+  MEDIA_REMOVE: "MEDIA_REMOVE",
+  MEDIA_REORDER: "MEDIA_REORDER",
+} as const;
+
+export const ENTITY_TYPES = {
+  NEWS: "NEWS",
+  EVENT: "EVENT",
+  MEDIA: "MEDIA",
+  USER: "USER",
+} as const;
+
+export const DEFAULT_PAGE_SIZE = 20;
+export const MAX_PAGE_SIZE = 100;

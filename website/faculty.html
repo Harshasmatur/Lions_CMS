@@ -1,0 +1,2352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Explore academic programs at Lions P.U. College — Higher Primary Schoolto P.U. College."/>
+<title>Academics | Lions P.U. College</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="icon" type="image/svg+xml" href="images/lions-favicon.svg">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+
+<style id="academics-cleanup">
+/* =========================================================
+   ACADEMICS PAGE — PREMIUM PROGRAM CARDS
+   Uses unique class names so older style.css overrides
+   cannot hide or distort these cards.
+   ========================================================= */
+
+.premium-academic-programs {
+    display: block !important;
+    width: 100% !important;
+    padding: 70px 0 90px !important;
+    background: linear-gradient(180deg, #f3f6fa 0%, #eef2f7 100%) !important;
+    position: relative !important;
+    clear: both !important;
+}
+
+.premium-academic-container {
+    width: 100% !important;
+    max-width: 1320px !important;
+    margin: 0 auto !important;
+    padding: 0 35px !important;
+}
+
+.premium-academic-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 30px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    align-items: stretch !important;
+}
+
+.premium-academic-card {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    background: #fff !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(27,58,107,.08) !important;
+    box-shadow: 0 12px 35px rgba(27,58,107,.09) !important;
+    transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease !important;
+}
+
+.premium-academic-card:hover {
+    transform: translateY(-9px) !important;
+    box-shadow: 0 25px 55px rgba(27,58,107,.17) !important;
+    border-color: rgba(245,166,35,.45) !important;
+}
+
+.premium-academic-image {
+    position: relative !important;
+    width: 100% !important;
+    height: 245px !important;
+    overflow: hidden !important;
+    background: #dfe5ee !important;
+}
+
+.premium-academic-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+    transition: transform .65s ease !important;
+}
+
+.premium-academic-card:hover .premium-academic-image img {
+    transform: scale(1.055) !important;
+}
+
+.premium-academic-overlay {
+    position: absolute !important;
+    inset: 0 !important;
+    background: linear-gradient(to top, rgba(7,29,61,.88) 0%, rgba(7,29,61,.38) 45%, rgba(7,29,61,.02) 78%) !important;
+    z-index: 1 !important;
+}
+
+.premium-academic-image-text {
+    position: absolute !important;
+    left: 25px !important;
+    bottom: 22px !important;
+    z-index: 2 !important;
+}
+
+.premium-academic-image-text span {
+    display: block !important;
+    margin-bottom: 6px !important;
+    color: #f5a623 !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    letter-spacing: 2px !important;
+}
+
+.premium-academic-image-text h3 {
+    margin: 0 !important;
+    color: #fff !important;
+    font-size: 25px !important;
+    font-weight: 700 !important;
+    line-height: 1.1 !important;
+}
+
+.premium-academic-body {
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 !important;
+    padding: 27px 26px 28px !important;
+    background: #fff !important;
+}
+
+.premium-academic-label {
+    color: #f5a623 !important;
+    font-size: 10px !important;
+    font-weight: 800 !important;
+    letter-spacing: 2px !important;
+    margin-bottom: 9px !important;
+}
+
+.premium-academic-body h2 {
+    margin: 0 0 10px !important;
+    color: #173765 !important;
+    font-size: 26px !important;
+    font-weight: 750 !important;
+    line-height: 1.15 !important;
+}
+
+.premium-academic-line {
+    width: 42px !important;
+    height: 3px !important;
+    background: #f5a623 !important;
+    margin-bottom: 18px !important;
+}
+
+.premium-academic-body p {
+    margin: 0 0 22px !important;
+    color: #64748b !important;
+    font-size: 13.5px !important;
+    line-height: 1.65 !important;
+}
+
+.premium-academic-features {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    margin-top: auto !important;
+}
+
+.premium-academic-features > div {
+    display: flex !important;
+    align-items: center !important;
+    min-height: 43px !important;
+    padding: 8px 10px !important;
+    border-radius: 8px !important;
+    background: #f7f9fc !important;
+    border: 1px solid #e4e9f0 !important;
+    transition: background .25s ease, border-color .25s ease, transform .25s ease !important;
+}
+
+.premium-academic-features > div:hover {
+    background: #fff8eb !important;
+    border-color: #f5a623 !important;
+    transform: translateY(-2px) !important;
+}
+
+.premium-academic-features i {
+    color: #f5a623 !important;
+    font-size: 13px !important;
+    width: 20px !important;
+    flex-shrink: 0 !important;
+}
+
+.premium-academic-features span {
+    color: #173765 !important;
+    font-size: 10.5px !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+}
+
+.premium-academic-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    align-self: flex-start !important;
+    margin-top: 22px !important;
+    padding: 10px 17px !important;
+    border-radius: 7px !important;
+    background: #173765 !important;
+    color: #fff !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    transition: background .25s ease, transform .25s ease !important;
+}
+
+.premium-academic-link:hover {
+    background: #f5a623 !important;
+    color: #173765 !important;
+    transform: translateX(4px) !important;
+}
+
+/* Override legacy rules in style.css that hide these program URLs. */
+.premium-academic-link[href="middle-school.html"],
+.premium-academic-link[href="high-school.html"],
+.premium-academic-link[href="P.U.-college.html"] {
+    display: inline-flex !important;
+}
+
+/* FLOATING WHATSAPP BUTTON (LEFT SIDE) */
+.whatsapp-float {
+    position: fixed;
+    bottom: 90px;
+    right: 28px;
+    z-index: 99999;
+    width: 55px;
+    height: 55px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #20ba5a;
+    color: #FFF;
+    transform: scale(1.08);
+}
+
+/* SCROLL TO TOP BUTTON (RIGHT SIDE - RAISED TO PREVENT OVERLAP) */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 95px;
+    right: 30px;
+    z-index: 99998;
+    width: 45px;
+    height: 45px;
+    background-color: var(--navy, #00338d);
+    color: #FFF;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.scroll-top-btn:hover {
+    background-color: var(--gold, #d4a843);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 1000px) {
+    .premium-academic-container {
+        padding: 0 25px !important;
+    }
+
+    .premium-academic-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 24px !important;
+    }
+}
+
+@media (max-width: 650px) {
+    .premium-academic-programs {
+        padding: 50px 0 65px !important;
+    }
+
+    .premium-academic-container {
+        padding: 0 18px !important;
+    }
+
+    .premium-academic-grid {
+        grid-template-columns: 1fr !important;
+        gap: 22px !important;
+    }
+
+    .premium-academic-image {
+        height: 220px !important;
+    }
+
+    .premium-academic-body {
+        padding: 24px 21px 25px !important;
+    }
+}
+
+
+
+/* =========================================================
+   RESULTS SECTION MATCHED EXACTLY TO GALLERY & FACULTY
+   ========================================================= */
+.premium-results-section {
+    padding: 70px 0;
+    background: #ffffff;
+}
+
+.results-section-header {
+    max-width: 760px;
+    margin: 0 auto 35px;
+    text-align: center;
+}
+
+.results-kicker {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: #f5a623;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+}
+
+.results-main-title {
+    margin: 0;
+    color: #122750;
+    font-family: inherit;
+    font-size: clamp(30px, 3.5vw, 42px);
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -.02em;
+}
+
+.results-gold-line {
+    width: 42px;
+    height: 3px;
+    margin: 14px auto 15px;
+    background: #f5a623;
+    border-radius: 10px;
+}
+
+.results-intro {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #667085;
+    font-size: 13px;
+    line-height: 1.7;
+    font-weight: 500;
+}
+
+/* FILTER PILLS MATCHING GALLERY STYLE */
+.results-filter-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 35px;
+}
+
+.results-filters {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    max-width: 100%;
+    padding: 6px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    background: #fff;
+    border: 1px solid rgba(18,39,80,.09);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(18,39,80,.08);
+}
+
+.results-filters::-webkit-scrollbar { display: none; }
+
+.results-filter {
+    flex: 0 0 auto;
+    min-height: 39px;
+    padding: 9px 15px;
+    border: 0;
+    border-radius: 8px;
+    outline: 0;
+    background: transparent;
+    color: #617189;
+    cursor: pointer;
+    font: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: all .25s ease;
+}
+
+.results-filter:hover {
+    color: #122750;
+    background: #f3f6fa;
+}
+
+.results-filter.active {
+    color: #122750;
+    background: #f5a623;
+    box-shadow: 0 5px 14px rgba(245,166,35,.3);
+}
+
+/* 4-COLUMN GRID MATCHING GALLERY CARDS */
+.premium-results-grid {
+    margin-top: 5px;
+}
+
+.premium-result-card {
+    background: #fff;
+    border: 1px solid rgba(18,39,80,.08);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(18,39,80,.09);
+    transition: transform .28s ease, box-shadow .28s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.premium-result-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 34px rgba(18,39,80,.14);
+}
+
+.result-image-button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: zoom-in;
+    text-align: left;
+}
+
+/* IMAGE WRAPPER MATCHING FACULTY-PHOTO & GALLERY RATIO */
+.result-card-image {
+    position: relative;
+    width: 100%;
+    height: 330px;
+    overflow: hidden;
+    background: #e9eef5;
+}
+
+.result-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform .5s ease;
+}
+
+.premium-result-card:hover .result-img {
+    transform: scale(1.035);
+}
+
+.result-zoom-btn {
+    position: absolute;
+    right: 13px;
+    bottom: 13px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5a623;
+    color: #fff;
+    font-size: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.2);
+    border: none;
+    z-index: 2;
+}
+
+.result-year-badge {
+    position: absolute;
+    z-index: 3;
+    top: 13px;
+    right: 13px;
+    padding: 5px 10px;
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 20px;
+    background: #122750;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .05em;
+    box-shadow: 0 4px 12px rgba(0,0,0,.15);
+}
+
+/* CONTENT AREA */
+.premium-result-content {
+    padding: 16px 18px 18px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.result-category {
+    display: block;
+    color: #f5a623;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 10px;
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+.premium-result-content h3 {
+    margin: 0 0 4px;
+    color: #122750;
+    font-size: 16px;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+.result-description {
+    margin: 0 0 12px;
+    color: #667085;
+    font-size: 12px;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+/* SCORE ROW */
+.result-score-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid #edf0f4;
+}
+
+.score-label {
+    display: block;
+    margin-bottom: 2px;
+    color: #8a97a8;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.result-score {
+    display: block;
+    color: #122750;
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: -.03em;
+}
+
+.result-score span {
+    color: #f5a623;
+    font-size: 14px;
+    margin-left: 1px;
+}
+
+.result-rank { font-size: 22px; }
+
+.result-view-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding-bottom: 1px;
+    border-bottom: 1px solid rgba(245, 166, 35, .6);
+    color: #122750;
+    font-size: 11px;
+    font-weight: 800;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all .25s ease;
+}
+
+.result-view-link:hover {
+    gap: 8px;
+    color: #f5a623;
+}
+
+.result-item.result-hidden {
+    display: none !important;
+}
+
+/* EMPTY STATE */
+.results-empty {
+    display: none;
+    padding: 55px 20px;
+    text-align: center;
+}
+.results-empty.show { display: block; }
+.results-empty-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 62px;
+    height: 62px;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    background: #eef3f9;
+    color: #122750;
+    font-size: 23px;
+}
+.results-empty h3 {
+    margin: 0 0 7px;
+    color: #122750;
+    font-size: 20px;
+    font-weight: 800;
+}
+.results-empty p {
+    margin: 0;
+    color: #7a8798;
+    font-size: 13px;
+}
+
+/* LIGHTBOX MODAL MATCHING GALLERY */
+.premium-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 70px 95px;
+    background: rgba(8, 20, 43, .88);
+    backdrop-filter: blur(5px);
+}
+.premium-lightbox.open { display: flex; }
+.lightbox-box {
+    position: relative;
+    width: min(820px, 72vw);
+    max-height: 76vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.lightbox-box img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 22px 65px rgba(0,0,0,.45);
+    background: #fff;
+}
+.lightbox-caption {
+    margin-top: 10px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    display: none;
+}
+.lightbox-close, .lightbox-nav {
+    position: absolute;
+    z-index: 3;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .22s ease;
+}
+.lightbox-close {
+    top: 22px;
+    right: 25px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #f5a623;
+    color: #122750;
+    font-size: 17px;
+}
+.lightbox-nav {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #fff;
+    color: #122750;
+    font-size: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,.2);
+}
+.lightbox-prev { left: 28px; }
+.lightbox-next { right: 28px; }
+.lightbox-close:hover, .lightbox-nav:hover {
+    background: #f5a623;
+    color: #122750;
+}
+body.lightbox-open { overflow: hidden; }
+
+
+</style>
+</head>
+<body class="about-page">
+
+<!-- UTILITY BAR -->
+<div class="utility-bar d-none d-md-block">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center gap-3">
+                <!--socil icon space-->
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <a href="https://wa.me/919148984367" target="_blank" rel="noopener noreferrer">
+                    <i class="fa fa-phone me-1"></i>
+                    +91 9148984367
+                </a>
+                <span class="divider">|</span>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to= lionspucollegesirsi@gmail.com" target="_blank" rel="noopener noreferrer">
+                    <i class="fa fa-envelope me-1"></i>
+                     lionspucollegesirsi@gmail.com
+                </a>
+                <span class="divider">|</span>
+                <a href="https://maps.google.com/?q=Lions+P.U.+College,+Lions+Nagar,+Sirsi,+Karnataka+581401" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+                    <i class="fa fa-location-dot me-1"></i>
+                    Sirsi, Karnataka
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg main-navbar sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+<img src="images/lions-pu-college-logo.svg" alt="Lions PU College, Sirsi" class="d-inline-block align-text-top" />    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+
+
+          
+        <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="academics.html" data-bs-toggle="dropdown" aria-expanded="false">Academics</a>
+              <ul class="dropdown-menu"><li><a class="dropdown-item" href="academics.html">Academics</a></li><li><a class="dropdown-item" href="coursess.html">P U Courses</a></li>
+              <li><a class="dropdown-item" href="results.html">Results</a></li>   <li>
+            <a class="dropdown-item" href="faculty.html">
+                Faculty
+            </a></ul> </li>
+
+
+
+
+
+            <li class="nav-item"><a class="nav-link " href="admissions.html">Admissions</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " href="Campus.html" data-bs-toggle="dropdown" aria-expanded="false">Campus</a>
+              <ul class="dropdown-menu"><li><a class="dropdown-item" href="facilities.html">Facilities</a></li><li><a class="dropdown-item" href="gallery.html">Gallery</a></li></ul>
+            </li><li class="nav-item"><a class="nav-link " href="news.html">News & Events</a></li><li class="nav-item"><a class="nav-link " href="contact.html">Contact</a></li>
+      </ul>
+      <div class="ms-lg-4 mt-3 mt-lg-0">
+        <a href="admissions.html" class="btn-apply">Apply Now →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ACADEMICS HERO -->
+<section class="page-hero-banner">
+  <div class="container" style="position:relative;z-index:1">
+    <h1>Faculty</h1>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="index.html">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Faculty</li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<!-- =========================================================
+     ACADEMIC PROGRAMS
+     ========================================================= -->
+
+<!-- <section class="premium-academic-programs" aria-labelledby="premium-academic-heading">
+
+  <div class="premium-academic-container">
+
+    <div class="text-center mb-5">
+      <span class="academic-eyebrow">OUR PROGRAMS</span>
+      <h2 id="premium-academic-heading" class="section-heading">Academics Courses</h2>
+      <div class="section-underline centered"></div>
+      <p class="mx-auto" style="max-width:720px;color:#64748b;line-height:1.7;margin:0;">
+        From foundational learning to pre-university education, every stage is designed
+        to build knowledge, confidence, skills and a strong future.
+      </p>
+    </div>
+
+    <div class="premium-academic-grid">
+
+      <!-- Higher Primary School-->
+      <!-- <article class="premium-academic-card">
+
+        <div class="premium-academic-image">
+          <img src="images/science1.png" alt="Higher Primary Schoolstudents">
+          <div class="premium-academic-overlay"></div> -->
+
+          <!-- <div class="premium-academic-image-text">
+            <h3>Science</h3>
+          </div> -->
+        <!-- </div>
+
+        <div class="premium-academic-body">
+
+          <div class="premium-academic-label">CLASSES 11–12</div>
+
+           <h2>Science</h2><h6>(PCMB),(PCMC)</h6>
+
+          <div class="premium-academic-line"></div>
+
+          <p>
+            Focuses on core analytical subjects like Physics, Chemistry, and Mathematics paired with Biology, Computer Science, or Electronics. It prepares students for professional degrees in engineering, medicine, and research.
+          </p>
+
+          <div class="premium-academic-features">
+
+            <div>
+              <i class="fa fa-book-open"></i>
+              <span>KCET Coaching</span>
+            </div>
+
+            <div>
+              <i class="fa fa-book-open"></i>
+              <span>NEET Coaching</span>
+            </div>
+
+            <div>
+              <i class="fa fa-book-open"></i>
+              <span>JEE Coaching</span>
+            </div>
+
+            <div>
+              <i class="fa fa-book-open"></i>
+              <span>Problem-Solving & Experimentation</span>
+            </div>
+
+          </div>
+        </div>
+      </article> -->
+
+
+      <!-- HIGH SCHOOL -->
+      <!-- <article class="premium-academic-card">
+
+        <div class="premium-academic-image">
+          <img src="images/Commerese.png" alt="High School programs">
+          <div class="premium-academic-overlay"></div> -->
+
+          <!-- <div class="premium-academic-image-text">
+            <h3>Commerce</h3>
+          </div> -->
+        <!-- </div>
+
+        <div class="premium-academic-body">
+
+          <div class="premium-academic-label">CLASSES 11–12</div>
+
+          <h2>Commerce</h2>
+               <h6>(SEBA)</h6>
+
+          <div class="premium-academic-line"></div>
+
+          <p>
+            Centers on financial management, business operations, and market economics through subjects like Accountancy and Business Studies. It sets the foundation for careers in corporate finance, banking, chartered accountancy, and business management.
+          </p>
+
+          <div class="premium-academic-features">
+
+            <div>
+              <i class="fa fa-book-open"></i>
+              <span>C A Coaching</span>
+            </div>
+
+            <div>
+              <i class="fa fa-book-open"></i>
+              <span>C M A SCoaching</span>
+            </div>
+
+            <div>
+              <i class="fa fa-book-open"></i>
+              <span>C S Coaching</span>
+            </div>
+
+            <div>
+              <i class="fa fa-book-open"></i>
+              <span>Quantitative Analysis</span>
+            </div>
+
+          </div>
+        </div>
+      </article> -->
+
+
+      <!-- P.U. COLLEGE -->
+      <!-- <article class="premium-academic-card">
+
+        <div class="premium-academic-image">
+          <img src="images/Arts.png" alt="P.U. College students">
+          <div class="premium-academic-overlay"></div> -->
+
+          <!-- <div class="premium-academic-image-text">
+            <h3>Arts</h3>
+          </div> -->
+        <!-- </div>
+
+        <div class="premium-academic-body">
+
+          <div class="premium-academic-label">CLASSES 11–12</div>
+
+          <h2>Offered Languages</h2>
+          
+
+          <div class="premium-academic-line"></div> -->
+
+          <!-- <p>
+            The medium of instruction is English, along with the choice of languages prescribed for the Pre-University programme, such as Kannada, Hindi, & Sanskrit.
+
+          </p>
+
+          <div class="premium-academic-features">
+
+            <div>
+              <i class="fa fa-book-open"></i>
+              <span>English</span>
+            </div>
+
+            <div>
+              <i class="fa fa-book-open"></i>
+              <span>Kannada</span>
+            </div>
+
+            <div>
+              <i class="fa fa-book-open"></i>
+              <span>Hindi</span>
+            </div>
+
+            <div> -->
+              <!-- <i class="fa fa-book-open"></i>
+              <span> Sanskrit</span>
+            </div>
+
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+</section> -->
+
+
+
+
+<!-- RESULTS SECTION MATCHING GALLERY FORMAT -->
+<section class="py-5 bg-white premium-results-section" id="results">
+  <div class="container">
+
+    <div class="text-center mb-4">
+      <!-- <span class="results-kicker">ACADEMIC EXCELLENCE</span> -->
+      <h2 class="section-heading">Our Faculty</h2>
+      <div class="section-underline centered"></div>
+      <p class="results-intro">
+        The backbone of our institution, our passionate educators shape future leaders through unwavering dedication, expert mentorship, and personal investment in every student’s success.
+      </p>
+    </div>
+
+    <!-- GALLERY FILTER PILLS STYLE -->
+    <div class="d-flex gap-2 flex-wrap justify-content-center mb-4" id="resultsFilters">
+      <button type="button" class="btn btn-sm btn-warning fw-600 text-dark results-filter active" data-filter="all">All</button>
+      <button type="button" class="btn btn-sm btn-outline-secondary fw-500 results-filter" data-filter="science">SCIENCE</button>
+      <button type="button" class="btn btn-sm btn-outline-secondary fw-500 results-filter" data-filter="commerce">COMMERCE</button>
+      <button type="button" class="btn btn-sm btn-outline-secondary fw-500 results-filter" data-filter="languages">LANGUAGES</button>
+      <button type="button" class="btn btn-sm btn-outline-secondary fw-500 results-filter" data-filter="team">CORPORATE TEAM</button>
+    </div>
+
+    <!-- RESPONSIVE 4-COLUMN GRID WITH FILTER SECTIONS -->
+    <div class="row g-4 premium-results-grid" id="premiumResultsGrid">
+
+      <!-- 10TH RESULT 1 -->
+      <div class="col-12 col-sm-6 col-lg-3 result-item" data-category="science">
+        <div class="premium-result-card">
+          <button class="result-image-button" type="button" data-caption="Student Name • 10th Board (98.40%)">
+            <div class="result-card-image">
+              <img src="images/01 Naveen Hegde.JPG" alt="10th board result student" class="result-img" loading="lazy">
+              <!-- <span class="result-zoom-btn"><i class="fa-solid fa-expand"></i></span> -->
+              <!-- <span class="result-year-badge">2026</span> -->
+            </div>
+          </button>
+          <div class="premium-result-content">
+            <span class="result-category">Principal</span>
+           <h3>Mr. Naveen Hegde</h3>
+            <strong>Dept. of Mathematics</strong>
+            <strong>Qualification : M.Sc(Ph.D)</strong>
+            <strong>Exp : 11 years</strong>
+            <!-- <div class="result-score-row">
+              <div>
+                <span class="score-label">Percentage</span>
+                <strong class="result-score">98.40<span>%</span></strong>
+              </div>
+              <a href="javascript:void(0)" class="result-view-link">View Result <i class="fa fa-arrow-right"></i></a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- 10TH RESULT 2 -->
+      <div class="col-12 col-sm-6 col-lg-3 result-item" data-category="science">
+        <div class="premium-result-card">
+          <button class="result-image-button" type="button" data-caption="Student Name • 10th Board (97.80%)">
+            <div class="result-card-image">
+              <img src="images/Smita Naik.JPG" alt="10th board result student" class="result-img" loading="lazy">
+              <!-- <span class="result-zoom-btn"><i class="fa-solid fa-expand"></i></span> -->
+              <!-- <span class="result-year-badge">2026</span> -->
+            </div>
+          </button>
+          <div class="premium-result-content">
+            <!-- <span class="result-category">10TH BOARD</span> -->
+            <h3>Mrs. Smita K Naik</h3>
+            <strong>Dept. of  Physics</strong>
+            <strong>Qualification : M.Sc Physics</strong>
+            <strong>Exp : 10 year</strong>
+            <!-- <p class="result-description">A proud achievement through consistent preparation.</p> -->
+            <!-- <div class=""> -->
+              <!-- <div>
+                <span class="score-label">Percentage</span>
+                <strong class="result-score">96.60<span>%</span></strong>
+              </div> -->
+              <!-- <a href="javascript:void(0)" class="result-view-link">View Result <i class="fa fa-arrow-right"></i></a> -->
+            <!-- </div> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- 10TH RESULT 3 -->
+      <div class="col-12 col-sm-6 col-lg-3 result-item" data-category="science">
+        <div class="premium-result-card">
+          <button class="result-image-button" type="button" data-caption="Student Name • 10th Board (96.60%)">
+            <div class="result-card-image">
+              <img src="images/Namrata Bhat.jpg" alt="10th board result student" class="result-img" loading="lazy">
+              <!-- <span class="result-zoom-btn"><i class="fa-solid fa-expand"></i></span> -->
+              <!-- <span class="result-year-badge">2026</span> -->
+            </div>
+          </button>
+          <div class="premium-result-content">
+            <!-- <span class="result-category">10TH BOARD</span> -->
+            <h3>Mrs. Namrata Bhat</h3>
+            <strong>Dept. of Chemistry</strong>
+            <strong>Qualification : M.Sc Chemistry, B.Ed</strong>
+            <strong>Exp : 04 year</strong>
+            <!-- <p class="result-description">A proud achievement through consistent preparation.</p> -->
+            <!-- <div class="result-score-row"> -->
+              <!-- <div>
+                <span class="score-label">Percentage</span>
+                <strong class="result-score">96.60<span>%</span></strong>
+              </div> -->
+              <!-- <a href="javascript:void(0)" class="result-view-link">View Result <i class="fa fa-arrow-right"></i></a> -->
+            <!-- </div> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- 1ST PUC RESULT 1 -->
+      <div class="col-12 col-sm-6 col-lg-3 result-item" data-category="science">
+        <div class="premium-result-card">
+          <button class="result-image-button" type="button" data-caption="Student Name • 1st PUC (94.80%)">
+            <div class="result-card-image">
+              <img src="images/Ravindra Hegde.JPG" alt="1st PUC result student" class="result-img" loading="lazy">
+              <!-- <span class="result-zoom-btn"><i class="fa-solid fa-expand"></i></span> -->
+              <!-- <span class="result-year-badge">2026</span> -->
+            </div>
+          </button>
+          <div class="premium-result-content">
+            <!-- <span class="result-category">1ST PUC</span> -->
+           <h3>Mr. Raveendra Hegde</h3>
+            <strong>Dept. of Comp. Science & Statistics</strong>
+            <strong>Qualification : MCA, MBA, M.COM, ISM</strong>
+            <strong>Exp : 22 year</strong>
+            <!-- <p class="result-description">Strong academic foundation and excellent progress.</p>
+            <div class="result-score-row">
+              <div>
+                <span class="score-label">Percentage</span>
+                <strong class="result-score">94.80<span>%</span></strong>
+              </div>
+              <a href="javascript:void(0)" class="result-view-link">View Result <i class="fa fa-arrow-right"></i></a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- 1ST PUC RESULT 2 -->
+      <div class="col-12 col-sm-6 col-lg-3 result-item" data-category="science">
+        <div class="premium-result-card">
+          <button class="result-image-button" type="button" data-caption="Student Name • 1st PUC (93.60%)">
+            <div class="result-card-image">
+              <img src="images/Sumashri K S.JPG" alt="1st PUC result student" class="result-img" loading="lazy">
+              <!-- <span class="result-zoom-btn"><i class="fa-solid fa-expand"></i></span> -->
+              <!-- <span class="result-year-badge">2026</span> -->
+            </div>
+          </button>
+          <div class="premium-result-content">
+            <!-- <span class="result-category">1ST PUC</span> -->
+            <h3>Dr. Sumashri K S</h3>
+            <strong>Dept. of Biology</strong>
+            <strong>Qualification: M.Sc, Ph.D</strong>
+            <strong>Exp : 7 year</strong>
+            <!-- <p class="result-description">Recognising commitment and academic excellence.</p>
+            <div class="result-score-row">
+              <div>
+                <span class="score-label">Percentage</span>
+                <strong class="result-score">93.60<span>%</span></strong>
+              </div>
+              <a href="javascript:void(0)" class="result-view-link">View Result <i class="fa fa-arrow-right"></i></a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- 2ND PUC PCMB -->
+      <div class="col-12 col-sm-6 col-lg-3 result-item" data-category="science">
+        <div class="premium-result-card">
+          <button class="result-image-button" type="button" data-caption="Student Name • 2nd PUC PCMB (96.20%)">
+            <div class="result-card-image">
+              <img src="images/Shruti Bhat.JPG" alt="2nd PUC PCMB result student" class="result-img" loading="lazy">
+              <!-- <span class="result-zoom-btn"><i class="fa-solid fa-expand"></i></span> -->
+              <!-- <span class="result-year-badge">2026</span> -->
+            </div>
+          </button>
+          <div class="premium-result-content">
+            <!-- <span class="result-category">2ND PUC • PCMB</span> -->
+            <h3>Dr. Shruti Bhat</h3>
+            <strong>Dept. of  Physics</strong>
+            <strong>Qualification : M.Sc, Ph.D</strong>
+            <strong>Exp : 7 year</strong>
+            <!-- <p class="result-description">Excellent performance across science subjects.</p>
+            <div class="result-score-row">
+              <div>
+                <span class="score-label">Percentage</span>
+                <strong class="result-score">96.20<span>%</span></strong>
+              </div>
+              <a href="javascript:void(0)" class="result-view-link">View Result <i class="fa fa-arrow-right"></i></a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- 2ND PUC PCMC -->
+      <div class="col-12 col-sm-6 col-lg-3 result-item" data-category="science">
+        <div class="premium-result-card">
+          <button class="result-image-button" type="button" data-caption="Student Name • 2nd PUC PCMC (95.70%)">
+            <div class="result-card-image">
+              <img src="images/07 Vinayak Pai.JPG" alt="2nd PUC PCMC result student" class="result-img" loading="lazy">
+              <!-- <span class="result-zoom-btn"><i class="fa-solid fa-expand"></i></span> -->
+              <!-- <span class="result-year-badge">2026</span> -->
+            </div>
+          </button>
+          <div class="premium-result-content">
+            <!-- <span class="result-category">2ND PUC • PCMC</span> -->
+            <h3>Mr. Vinayk Pai</h3>
+            <strong>Dept. of Chemistry</strong>
+            <strong>Qualification : M.Sc, Chemistry, B.Ed</strong>
+            <strong> Exp : 3 year</strong>
+            <!-- <p class="result-description">Outstanding performance in science and mathematics.</p>
+            <div class="result-score-row">
+              <div>
+                <span class="score-label">Percentage</span>
+                <strong class="result-score">95.70<span>%</span></strong>
+              </div>
+              <a href="javascript:void(0)" class="result-view-link">View Result <i class="fa fa-arrow-right"></i></a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- 2ND PUC COMMERCE -->
+      <div class="col-12 col-sm-6 col-lg-3 result-item" data-category="science">
+        <div class="premium-result-card">
+          <button class="result-image-button" type="button" data-caption="Student Name • 2nd PUC Commerce (94.90%)">
+            <div class="result-card-image">
+              <img src="images/Megha Shetty.JPG" alt="2nd PUC Commerce result student" class="result-img" loading="lazy">
+              <!-- <span class="result-zoom-btn"><i class="fa-solid fa-expand"></i></span> -->
+              <!-- <span class="result-year-badge">2026</span> -->
+            </div>
+          </button>
+          <div class="premium-result-content">
+            <!-- <span class="result-category">2ND PUC • COMMERCE</span> -->
+           <h3>Mrs. Megha Shetty</h3>
+            <strong>Dept. of Mathematics</strong>
+            <strong>Qualification : M.Sc, Maths, B.Ed, KSET</strong>
+            <strong> Exp : 2 year</strong>
+            <!-- <p class="result-description">Excellent achievement in commerce studies.</p>
+            <div class="result-score-row">
+              <div>
+                <span class="score-label">Percentage</span>
+                <strong class="result-score">94.90<span>%</span></strong>
+              </div>
+              <a href="javascript:void(0)" class="result-view-link">View Result <i class="fa fa-arrow-right"></i></a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- KCET 1 -->
+      <div class="col-12 col-sm-6 col-lg-3 result-item" data-category="commerce">
+        <div class="premium-result-card">
+          <button class="result-image-button" type="button" data-caption="Student Name • KCET Rank 1,245">
+            <div class="result-card-image">
+              <img src="images/09 Kanti hegde.JPG" alt="KCET achievement student" class="result-img" loading="lazy">
+              <!-- <span class="result-zoom-btn"><i class="fa-solid fa-expand"></i></span> -->
+              <!-- <span class="result-year-badge">2026</span> -->
+            </div>
+          </button>
+          <div class="premium-result-content">
+            <span class="result-category">HOD Commerce</span>
+             <h3>Mrs. Kanti Hegde</h3>
+            <strong>Dept. of Accountancy  & Business Studies</strong>
+            <strong>Qualification : M.COM</strong>
+            <strong>Exp : 8 year</strong>
+            <!-- <p class="result-description">Outstanding achievement in the KCET entrance examination.</p>
+            <div class="result-score-row">
+              <div>
+                <span class="score-label">KCET Rank</span>
+                <strong class="result-score result-rank">1,245</strong>
+              </div>
+              <a href="javascript:void(0)" class="result-view-link">View Result <i class="fa fa-arrow-right"></i></a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- KCET 2 -->
+      <div class="col-12 col-sm-6 col-lg-3 result-item" data-category="commerce">
+        <div class="premium-result-card">
+          <button class="result-image-button" type="button" data-caption="Student Name • KCET Rank 2,310">
+            <div class="result-card-image">
+              <img src="images/10 Pratap Hegde.JPG" alt="KCET achievement student" class="result-img" loading="lazy">
+              <!-- <span class="result-zoom-btn"><i class="fa-solid fa-expand"></i></span> -->
+              <!-- <span class="result-year-badge">2026</span> -->
+            </div>
+          </button>
+          <div class="premium-result-content">
+            <!-- <span class="result-category">KCET</span> -->
+            <h3>Mr. Pratap Hegde</h3>
+            <strong>Dept. of Economics</strong>
+            <strong>Qualification : M.A.Economics, NET, SET</strong>
+            <strong>Exp : 9 year</strong>
+            <!-- <p class="result-description">A remarkable performance in the engineering entrance.</p>
+            <div class="result-score-row">
+              <div>
+                <span class="score-label">KCET Rank</span>
+                <strong class="result-score result-rank">2,310</strong>
+              </div>
+              <a href="javascript:void(0)" class="result-view-link">View Result <i class="fa fa-arrow-right"></i></a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- NEET -->
+      <div class="col-12 col-sm-6 col-lg-3 result-item" data-category="languages">
+        <div class="premium-result-card">
+          <button class="result-image-button" type="button" data-caption="Student Name • NEET Score 612">
+            <div class="result-card-image">
+              <img src="images/11 Vijayalakshmi.JPG" alt="NEET achievement student" class="result-img" loading="lazy">
+              <!-- <span class="result-zoom-btn"><i class="fa-solid fa-expand"></i></span> -->
+              <!-- <span class="result-year-badge">2026</span> -->
+            </div>
+          </button>
+          <div class="premium-result-content">
+            <!-- <span class="result-category">NEET</span> -->
+            <h3>Mrs. Vijayalaxmi Bhat</h3>
+            <strong>Dept. of English</strong>
+            <strong>Qualification : M.A English, B.Ed</strong>
+            <strong>Exp : 26 year</strong>
+            <!-- <p class="result-description">Excellent performance in the medical entrance examination.</p>
+            <div class="result-score-row">
+              <div>
+                <span class="score-label">NEET Score</span>
+                <strong class="result-score result-rank">612</strong>
+              </div>
+              <a href="javascript:void(0)" class="result-view-link">View Result <i class="fa fa-arrow-right"></i></a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- PCMB -->
+      <div class="col-12 col-sm-6 col-lg-3 result-item" data-category="languages">
+        <div class="premium-result-card">
+          <button class="result-image-button" type="button" data-caption="Student Name • PCMB (96.20%)">
+            <div class="result-card-image">
+              <img src="images/12 Mahaveer Shetty.JPG" alt="PCMB student achievement" class="result-img" loading="lazy">
+              <!-- <span class="result-zoom-btn"><i class="fa-solid fa-expand"></i></span> -->
+              <!-- <span class="result-year-badge">2026</span> -->
+            </div>
+          </button>
+          <div class="premium-result-content">
+            <!-- <span class="result-category">PCMB</span> -->
+            <h3>Mr. Mahaveer Shetty</h3>
+            <strong>Dept. of Hindi</strong>
+            <strong>Qualification : M.A Hindi</strong>
+            <strong>Exp : 26 year</strong>
+            <!-- <p class="result-description">Strong performance across Physics, Chemistry, Math & Biology.</p>
+            <div class="result-score-row">
+              <div>
+                <span class="score-label">Percentage</span>
+                <strong class="result-score">96.20<span>%</span></strong>
+              </div>
+              <a href="javascript:void(0)" class="result-view-link">View Result <i class="fa fa-arrow-right"></i></a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <!-- PCMB -->
+      <div class="col-12 col-sm-6 col-lg-3 result-item" data-category="languages">
+        <div class="premium-result-card">
+          <button class="result-image-button" type="button" data-caption="Student Name • PCMB (96.20%)">
+            <div class="result-card-image">
+              <img src="images/13 Bhavya Hegde.JPG" alt="PCMB student achievement" class="result-img" loading="lazy">
+              <!-- <span class="result-zoom-btn"><i class="fa-solid fa-expand"></i></span> -->
+              <!-- <span class="result-year-badge">2026</span> -->
+            </div>
+          </button>
+          <div class="premium-result-content">
+            <!-- <span class="result-category">PCMB</span> -->
+            <h3>Mrs. Bhavya Hegde</h3>
+            <strong>Dept. of Kannada</strong>
+            <strong>Qualification : M.A Kannada</strong>
+            <strong>Exp : 11 year</strong>
+            <!-- <p class="result-description">Strong performance across Physics, Chemistry, Math & Biology.</p>
+            <div class="result-score-row">
+              <div>
+                <span class="score-label">Percentage</span>
+                <strong class="result-score">96.20<span>%</span></strong>
+              </div>
+              <a href="javascript:void(0)" class="result-view-link">View Result <i class="fa fa-arrow-right"></i></a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- PCMB -->
+      <div class="col-12 col-sm-6 col-lg-3 result-item" data-category="languages">
+        <div class="premium-result-card">
+          <button class="result-image-button" type="button" data-caption="Student Name • PCMB (96.20%)">
+            <div class="result-card-image">
+              <img src="images/14 Shashank Hegde.JPG" alt="PCMB student achievement" class="result-img" loading="lazy">
+              <!-- <span class="result-zoom-btn"><i class="fa-solid fa-expand"></i></span> -->
+              <!-- <span class="result-year-badge">2026</span> -->
+            </div>
+          </button>
+          <div class="premium-result-content">
+            <!-- <span class="result-category">PCMB</span> -->
+            <h3>Mr. Shashank Hegde</h3>
+            <strong>Dept. of Sanskrit </strong>
+            <strong>Qualification : M.A Sanskrit</strong>
+            <strong>Exp : 2 year</strong>
+            <!-- <p class="result-description">Strong performance across Physics, Chemistry, Math & Biology.</p>
+            <div class="result-score-row">
+              <div>
+                <span class="score-label">Percentage</span>
+                <strong class="result-score">96.20<span>%</span></strong>
+              </div>
+              <a href="javascript:void(0)" class="result-view-link">View Result <i class="fa fa-arrow-right"></i></a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+    
+
+       <!-- PCMB -->
+      <div class="col-12 col-sm-6 col-lg-3 result-item" data-category="team">
+        <div class="premium-result-card">
+          <button class="result-image-button" type="button" data-caption="Student Name • PCMB (96.20%)">
+            <div class="result-card-image">
+              <img src="images/15 Prakash Hegde.JPG" alt="PCMB student achievement" class="result-img" loading="lazy">
+              <!-- <span class="result-zoom-btn"><i class="fa-solid fa-expand"></i></span> -->
+              <!-- <span class="result-year-badge">2026</span> -->
+            </div>
+          </button>
+          <div class="premium-result-content">
+            <!-- <span class="result-category">PCMB</span> -->
+            <h3>Mr. Prakash Hegde</h3>
+            <strong>Admin and Technical</strong>
+      
+            <!-- <p class="result-description">Strong performance across Physics, Chemistry, Math & Biology.</p>
+            <div class="result-score-row">
+              <div>
+                <span class="score-label">Percentage</span>
+                <strong class="result-score">96.20<span>%</span></strong>
+              </div>
+              <a href="javascript:void(0)" class="result-view-link">View Result <i class="fa fa-arrow-right"></i></a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+
+
+       <!-- PCMB -->
+      <div class="col-12 col-sm-6 col-lg-3 result-item" data-category="team">
+        <div class="premium-result-card">
+          <button class="result-image-button" type="button" data-caption="Student Name • PCMB (96.20%)">
+            <div class="result-card-image">
+              <img src="images/16 Gayatri.JPG" alt="PCMB student achievement" class="result-img" loading="lazy">
+              <!-- <span class="result-zoom-btn"><i class="fa-solid fa-expand"></i></span> -->
+              <!-- <span class="result-year-badge">2026</span> -->
+            </div>
+          </button>
+          <div class="premium-result-content">
+            <!-- <span class="result-category">PCMB</span> -->
+            <h3>Ms. Gayatri K M</h3>
+            <strong>Technical</strong>
+      
+            <!-- <p class="result-description">Strong performance across Physics, Chemistry, Math & Biology.</p>
+            <div class="result-score-row">
+              <div>
+                <span class="score-label">Percentage</span>
+                <strong class="result-score">96.20<span>%</span></strong>
+              </div>
+              <a href="javascript:void(0)" class="result-view-link">View Result <i class="fa fa-arrow-right"></i></a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+    
+
+       <!-- PCMB -->
+      <div class="col-12 col-sm-6 col-lg-3 result-item" data-category="team">
+        <div class="premium-result-card">
+          <button class="result-image-button" type="button" data-caption="Student Name • PCMB (96.20%)">
+            <div class="result-card-image">
+              <img src="images/17 Amar.JPG" alt="PCMB student achievement" class="result-img" loading="lazy">
+              <!-- <span class="result-zoom-btn"><i class="fa-solid fa-expand"></i></span> -->
+              <!-- <span class="result-year-badge">2026</span> -->
+            </div>
+          </button>
+          <div class="premium-result-content">
+            <!-- <span class="result-category">PCMB</span> -->
+            <h3>Mr. Amar Shetty</h3>
+            <strong>Lab Assistant</strong>
+      
+            <!-- <p class="result-description">Strong performance across Physics, Chemistry, Math & Biology.</p>
+            <div class="result-score-row">
+              <div>
+                <span class="score-label">Percentage</span>
+                <strong class="result-score">96.20<span>%</span></strong>
+              </div>
+              <a href="javascript:void(0)" class="result-view-link">View Result <i class="fa fa-arrow-right"></i></a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+
+
+       <!-- PCMB -->
+      <div class="col-12 col-sm-6 col-lg-3 result-item" data-category="team">
+        <div class="premium-result-card">
+          <button class="result-image-button" type="button" data-caption="Student Name • PCMB (96.20%)">
+            <div class="result-card-image">
+              <img src="images/18 Shilpa.JPG" alt="PCMB student achievement" class="result-img" loading="lazy">
+              <!-- <span class="result-zoom-btn"><i class="fa-solid fa-expand"></i></span> -->
+              <!-- <span class="result-year-badge">2026</span> -->
+            </div>
+          </button>
+          <div class="premium-result-content">
+            <!-- <span class="result-category">PCMB</span> -->
+            <h3>Mrs. Shilpa Raghavendra</h3>
+            <strong>Care</strong>
+      
+            <!-- <p class="result-description">Strong performance across Physics, Chemistry, Math & Biology.</p>
+            <div class="result-score-row">
+              <div>
+                <span class="score-label">Percentage</span>
+                <strong class="result-score">96.20<span>%</span></strong>
+              </div>
+              <a href="javascript:void(0)" class="result-view-link">View Result <i class="fa fa-arrow-right"></i></a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+
+
+
+       <!-- PCMB -->
+      <div class="col-12 col-sm-6 col-lg-3 result-item" data-category="team">
+        <div class="premium-result-card">
+          <button class="result-image-button" type="button" data-caption="Student Name • PCMB (96.20%)">
+            <div class="result-card-image">
+              <img src="images/19 Teena.JPG" alt="PCMB student achievement" class="result-img" loading="lazy">
+              <!-- <span class="result-zoom-btn"><i class="fa-solid fa-expand"></i></span> -->
+              <!-- <span class="result-year-badge">2026</span> -->
+            </div>
+          </button>
+          <div class="premium-result-content">
+            <!-- <span class="result-category">PCMB</span> -->
+            <h3>Mrs. Teena Machado</h3>
+            <strong>Care</strong>
+      
+            <!-- <p class="result-description">Strong performance across Physics, Chemistry, Math & Biology.</p>
+            <div class="result-score-row">
+              <div>
+                <span class="score-label">Percentage</span>
+                <strong class="result-score">96.20<span>%</span></strong>
+              </div>
+              <a href="javascript:void(0)" class="result-view-link">View Result <i class="fa fa-arrow-right"></i></a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- EMPTY RESULT MESSAGE -->
+    <div class="results-empty" id="resultsEmpty">
+      <div class="results-empty-icon">
+        <i class="fa fa-graduation-cap"></i>
+      </div>
+      <h3>Results Coming Soon</h3>
+      <p>Achievement details for this category will be updated shortly.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- LIGHTBOX MODAL -->
+<div class="premium-lightbox" id="premiumLightbox" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="Close image">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+    <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous image">
+        <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <div class="lightbox-box">
+        <img id="lightboxImage" src="" alt="Result preview">
+        <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
+    <button class="lightbox-nav lightbox-next" type="button" aria-label="Next image">
+        <i class="fa-solid fa-chevron-right"></i>
+    </button>
+</div>
+
+
+
+
+<!-- 
+
+<section class="faculty-premium-section">
+  <div class="container">
+
+    <div class="text-center mb-4">
+      <h2 class="section-heading">Our Faculty</h2>
+      <div class="section-underline centered"></div>
+      <p class="faculty-intro">
+        Meet the educators who guide our students with knowledge, experience and care.
+      </p>
+    </div>
+
+    <div class="faculty-carousel" id="facultyCarousel">
+      <button class="faculty-arrow faculty-prev" type="button" aria-label="Previous faculty">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+      <div class="faculty-viewport">
+        <div class="faculty-track">
+
+          <article class="faculty-card">
+            <div class="faculty-photo">
+              <img src="images/Megha Shetty.JPG" alt="Dr. Ananya Rao" loading="lazy">
+            </div>
+            <div class="faculty-name-tag">
+              <strong>Ms.Megha Shetty</strong>
+              <span>Science Faculty</span>
+            </div>
+          </article>
+
+          <article class="faculty-card">
+            <div class="faculty-photo">
+              <img src="images/Sumashri K S.JPG" alt="Prof. Rohan Kulkarni" loading="lazy">
+            </div>
+            <div class="faculty-name-tag">
+              <strong>Ms. Sumashri KS</strong>
+              <span>Physics Faculty</span>
+            </div>
+          </article>
+
+          <article class="faculty-card">
+            <div class="faculty-photo">
+              <img src="images/Shruti Bhat.JPG" alt="Ms. Kavya Nair" loading="lazy">
+            </div>
+            <div class="faculty-name-tag">
+              <strong>Ms. Shruti Bhat</strong>
+              <span>Academic Mentor</span>
+            </div>
+          </article>
+
+          <article class="faculty-card">
+            <div class="faculty-photo">
+              <img src="images/Namrata Bhat.JPG" alt="Ms. Meera Joshi" loading="lazy">
+            </div>
+            <div class="faculty-name-tag">
+              <strong>Ms. Namrata Bhat</strong>
+              <span>Arts &amp; Cultural Faculty</span>
+            </div>
+          </article>
+
+          <article class="faculty-card">
+            <div class="faculty-photo">
+              <img src="images/Smita Naik.JPG" alt="Ms. Smita Naik" loading="lazy">
+            </div>
+            <div class="faculty-name-tag">
+              <strong>Ms. Smita Naik</strong>
+              <span>Student Development</span>
+            </div>
+          </article>
+
+          <article class="faculty-card">
+            <div class="faculty-photo">
+              <img src="images/Ravindra Hegde.JPG" alt="Ms. Nisha Bhat" loading="lazy">
+            </div>
+            <div class="faculty-name-tag">
+              <strong>Mr. Ravindra Hegde</strong>
+              <span>Activities &amp; Events</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <button class="faculty-arrow faculty-next" type="button" aria-label="Next faculty">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+
+    <div class="faculty-dots" aria-label="Faculty carousel navigation"></div>
+
+  </div>
+</section> -->
+
+
+
+<!-- FOOTER -->
+<footer class="site-footer premium-footer">
+
+  <div class="container">
+
+    <div class="premium-footer-main">
+
+      <!-- BRAND -->
+      <div class="footer-brand">
+
+        <a href="index.html" class="footer-brand-logo">
+          <img src="images/lions_logo.png" alt="Lions P.U. College">
+        </a>
+
+        <p>
+          Building future leaders with excellence, values,
+          and innovation 
+        </p>
+
+        <div class="footer-social">
+          <a href="https://www.facebook.com/lionspucollege.sirsi" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+
+          <a href="https://www.instagram.com/lionspucollegesirsi?igsi=NTY0eTZoNGZvdWpq" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+
+          <a href="https://www.youtube.com/@sirsilionsschools" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+
+          <a href="#" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+
+      </div>
+
+
+      <!-- EXPLORE -->
+      <div class="premium-footer-column">
+
+        <h6>Explore</h6>
+
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="academics.html">Academics</a></li>
+          <li><a href="admissions.html">Admissions</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+      </div>
+
+
+      <!-- ACADEMICS -->
+      <div class="premium-footer-column">
+
+        <h6>Academics</h6>
+
+        <ul>
+          <li><a href="academics.html">Academic Programs</a></li>
+          <li><a href="academics.html">Co-Curricular</a></li>
+          <li><a href="academics.html">Our Approach</a></li>
+          <li><a href="results.html">Board Results</a></li>
+          <li><a href="gallery.html">Campus Experience</a></li>
+        </ul>
+
+      </div>
+
+
+      <!-- Campus -->
+      <div class="premium-footer-column">
+
+        <h6>Campus</h6>
+
+        <ul>
+          <li><a href="facilities.html">Facilities</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="news.html">News & Events</a></li>
+          <li><a href="contact.html">Enquire Now</a></li>
+          <li><a href="admissions.html">Apply Now</a></li>
+        </ul>
+
+      </div>
+
+
+      <!-- CONTACT -->
+      <div class="premium-footer-contact">
+
+        <h6>Get In Touch</h6>
+
+        <div class="footer-contact-item">
+
+          <span class="footer-contact-icon">
+            <a href="https://maps.google.com/?q=Lions+P.U.+College,+Lions+Nagar,+Sirsi,+Karnataka+581401" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;"><i class="fa fa-location-dot"></i></a>
+          </span>
+
+          <div>
+            <strong>Visit Us</strong>
+            <p><a href="https://maps.google.com/?q=Lions+P.U.+College,+Lions+Nagar,+Sirsi,+Karnataka+581401" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Lions Nagar, Sirsi, Karnataka – 581401</a></p>
+          </div>
+
+        </div>
+
+
+        <div class="footer-contact-item">
+
+          <span class="footer-contact-icon">
+            <a href="https://wa.me/919148984367" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;"><i class="fa fa-phone"></i></a>
+          </span>
+
+          <div>
+            <strong>Call Us</strong>
+            <p><a href="https://wa.me/919148984367" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">+91 9148984367</a>  / <a href="tel:+919482189355" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">+91 9482189355</a></p>
+          </div>
+
+        </div>
+
+
+        <div class="footer-contact-item">
+
+          <span class="footer-contact-icon">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Sirsilions94@gmail.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;"><i class="fa fa-envelope"></i></a>
+          </span>
+
+          <div>
+            <strong>Email</strong>
+            <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to= lionspucollegesirsi@gmail.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;"> lionspucollegesirsi@gmail.com</a></p>
+          </div>
+
+        </div>
+
+
+        <div class="footer-contact-item">
+
+          <span class="footer-contact-icon">
+            <i class="fa fa-clock"></i>
+          </span>
+
+          <div>
+            <strong>Office Hours</strong>
+            <p>Mon–Sat: 9:00 AM – 5:00 PM</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- FOOTER BOTTOM -->
+  <div class="premium-footer-bottom">
+
+    <div class="container">
+
+      <div class="footer-bottom-inner">
+
+        <span>
+          © 2026 Lions P.U. College. All Rights Reserved.
+        </span>
+<span class="footer-credit">
+  Designed &amp; Developed by
+  <a href="https://www.ausinch.com" target="_blank" rel="noopener noreferrer">
+    <strong>AUSINCH</strong>
+  </a>
+</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/app.js"></script>
+<style>
+
+/* =========================================================
+   FACULTY CAROUSEL STYLES
+   ========================================================= */
+.faculty-premium-section {
+    padding: 70px 0;
+    background: var(--light-bg);
+}
+
+.faculty-premium-section .faculty-intro {
+    margin-bottom: 35px;
+}
+
+.faculty-carousel {
+    position: relative;
+    width: 100%;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 16px !important;
+}
+
+.faculty-viewport {
+    overflow: hidden;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    width: auto !important;
+}
+
+.faculty-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    will-change: transform;
+}
+
+.faculty-card {
+    flex: 0 0 auto;
+    width: var(--faculty-card-width, 340px);
+    background: #ffffff;
+    border: 1px solid rgba(18, 39, 80, 0.09);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(18, 39, 80, 0.10);
+}
+
+.faculty-photo {
+    width: 100%;
+    height: 330px;
+    overflow: hidden;
+    background: #e9eef5;
+}
+
+.faculty-photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.faculty-name-tag {
+    padding: 16px 18px 18px;
+    background: #ffffff;
+}
+
+.faculty-name-tag strong {
+    display: block;
+    color: #122750;
+    font-size: 16px;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+.faculty-name-tag span {
+    display: block;
+    margin-top: 5px;
+    color: #f5a623;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.faculty-arrow {
+    flex: 0 0 42px !important;
+    width: 42px !important;
+    min-width: 42px !important;
+    height: 42px !important;
+    min-height: 42px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 1px solid #122750 !important;
+    border-radius: 6px !important;
+    background: #ffffff !important;
+    color: #122750 !important;
+    z-index: 20 !important;
+    cursor: pointer;
+    transition: background .22s ease, color .22s ease;
+}
+
+.faculty-arrow:hover {
+    background: #f5a623 !important;
+    border-color: #f5a623 !important;
+    color: #122750 !important;
+}
+
+.faculty-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin-top: 15px;
+    height: 8px;
+}
+
+.faculty-dot {
+    width: 7px !important;
+    height: 7px !important;
+    min-width: 7px !important;
+    min-height: 7px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    border-radius: 50% !important;
+    background: #cbd3df !important;
+    cursor: pointer;
+}
+
+.faculty-dot.active {
+    width: 20px !important;
+    border-radius: 10px !important;
+    background: #f5a623 !important;
+}
+
+@media (max-width: 991px) {
+  .faculty-card {
+    width: var(--faculty-card-width, 300px);
+  }
+}
+
+@media (max-width: 575px) {
+  .faculty-card {
+    width: var(--faculty-card-width, calc(100vw - 48px));
+  }
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const facultyCarousel = document.getElementById("facultyCarousel");
+
+  if (facultyCarousel) {
+    const viewport = facultyCarousel.querySelector(".faculty-viewport");
+    const track = facultyCarousel.querySelector(".faculty-track");
+    const originalCards = track ? Array.from(track.querySelectorAll(".faculty-card")) : [];
+    const previous = facultyCarousel.querySelector(".faculty-prev");
+    const next = facultyCarousel.querySelector(".faculty-next");
+    const dots = facultyCarousel.parentElement.querySelector(".faculty-dots");
+
+    let index = 0;
+    let timer = null;
+    let isAnimating = false;
+
+    function visibleCards() {
+      if (window.innerWidth <= 575) return 1;
+      if (window.innerWidth <= 991) return 2;
+      return 4;
+    }
+
+    function buildInfiniteTrack() {
+      setFacultyCardSize();
+
+      track.querySelectorAll(".faculty-clone").forEach(function (clone) {
+        clone.remove();
+      });
+
+      const visible = visibleCards();
+
+      originalCards.slice(-visible).forEach(function (card) {
+        const clone = card.cloneNode(true);
+        clone.classList.add("faculty-clone");
+        track.insertBefore(clone, track.firstChild);
+      });
+
+      originalCards.slice(0, visible).forEach(function (card) {
+        const clone = card.cloneNode(true);
+        clone.classList.add("faculty-clone");
+        track.appendChild(clone);
+      });
+
+      index = visible;
+      track.style.transition = "none";
+      moveTrack(false);
+
+      void track.offsetWidth;
+      track.style.transition = "transform .6s cubic-bezier(.22,.61,.36,1)";
+
+      renderDots();
+    }
+
+    function setFacultyCardSize() {
+      const visible = visibleCards();
+      const gap = parseFloat(window.getComputedStyle(track).gap) || 20;
+      const availableWidth = viewport.clientWidth;
+      const cardWidth = Math.max(
+        0,
+        (availableWidth - (gap * (visible - 1))) / visible
+      );
+
+      track.style.setProperty("--faculty-card-width", cardWidth + "px");
+    }
+
+    function getCardStep() {
+      const card = track.querySelector(".faculty-card");
+      if (!card) return 0;
+
+      const cardWidth = card.getBoundingClientRect().width;
+      const gap = parseFloat(window.getComputedStyle(track).gap) || 20;
+
+      return cardWidth + gap;
+    }
+
+    function moveTrack(animate = true) {
+      if (!animate) {
+        track.style.transition = "none";
+      } else {
+        track.style.transition =
+          "transform .6s cubic-bezier(.22,.61)]), (.22,.61,.36,1)";
+      }
+
+      track.style.transform =
+        "translate3d(-" + (index * getCardStep()) + "px,0,0)";
+    }
+
+    function realIndex() {
+      const visible = visibleCards();
+      let value = index - visible;
+      const count = originalCards.length;
+
+      value = ((value % count) + count) % count;
+      return value;
+    }
+
+    function renderDots() {
+      const count = originalCards.length;
+      const current = realIndex();
+
+      dots.innerHTML = "";
+
+      for (let i = 0; i < count; i++) {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "faculty-dot" + (i === current ? " active" : "");
+        dot.setAttribute("aria-label", "Faculty slide " + (i + 1));
+
+        dot.addEventListener("click", function () {
+          const visible = visibleCards();
+          index = visible + i;
+          moveTrack(true);
+          restart();
+        });
+
+        dots.appendChild(dot);
+      }
+    }
+
+    function move(direction) {
+      if (isAnimating) return;
+
+      isAnimating = true;
+      index += direction;
+      moveTrack(true);
+      renderDots();
+      restart();
+    }
+
+    track.addEventListener("transitionend", function () {
+      const visible = visibleCards();
+      const count = originalCards.length;
+
+      if (index >= visible + count) {
+        index -= count;
+        moveTrack(false);
+
+        void track.offsetWidth;
+        track.style.transition =
+          "transform .6s cubic-bezier(.22,.61,.36,1)";
+      }
+
+      if (index < visible) {
+        index += count;
+        moveTrack(false);
+
+        void track.offsetWidth;
+        track.style.transition =
+          "transform .6s cubic-bezier(.22,.61,.36,1)";
+      }
+
+      renderDots();
+      isAnimating = false;
+    });
+
+    function restart() {
+      clearInterval(timer);
+      timer = setInterval(function () {
+        move(1);
+      }, 4500);
+    }
+
+    if (previous) {
+      previous.addEventListener("click", function () {
+        move(-1);
+      });
+    }
+
+    if (next) {
+      next.addEventListener("click", function () {
+        move(1);
+      });
+    }
+
+    if (viewport) {
+      viewport.addEventListener("mouseenter", function () {
+        clearInterval(timer);
+      });
+
+      viewport.addEventListener("mouseleave", function () {
+        restart();
+      });
+    }
+
+    let resizeTimer = null;
+
+    window.addEventListener("resize", function () {
+      clearTimeout(resizeTimer);
+
+      resizeTimer = setTimeout(function () {
+        buildInfiniteTrack();
+        restart();
+      }, 150);
+    });
+
+    buildInfiniteTrack();
+    restart();
+  }
+});
+</script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    /* =========================
+       RESULTS FILTER LOGIC (MATCHING GALLERY)
+       ========================= */
+    const filterButtons = document.querySelectorAll("#resultsFilters .results-filter");
+    const resultItems = Array.from(document.querySelectorAll(".result-item"));
+    const emptyState = document.getElementById("resultsEmpty");
+
+    filterButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            const filter = (this.dataset.filter || "").toLowerCase();
+
+            filterButtons.forEach(function (btn) {
+                btn.classList.remove("active", "btn-warning", "text-dark", "fw-600");
+                btn.classList.add("btn-outline-secondary", "fw-500");
+            });
+
+            this.classList.add("active", "btn-warning", "text-dark", "fw-600");
+            this.classList.remove("btn-outline-secondary", "fw-500");
+
+            let visibleCount = 0;
+            resultItems.forEach(function (item) {
+                const categories = (item.dataset.category || "").toLowerCase().split(/\s+/);
+                const visible = filter === "all" || categories.includes(filter);
+                item.classList.toggle("result-hidden", !visible);
+                if (visible) visibleCount++;
+            });
+
+            if (emptyState) {
+                emptyState.classList.toggle("show", visibleCount === 0);
+            }
+        });
+    });
+
+    /* =========================
+       RESULTS LIGHTBOX LOGIC
+       ========================= */
+    const lightbox = document.getElementById("premiumLightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxCaption = document.getElementById("lightboxCaption");
+    const lightboxTriggers = Array.from(document.querySelectorAll(".result-image-button, .result-view-link"));
+    const closeButton = document.querySelector(".lightbox-close");
+    const prevButton = document.querySelector(".lightbox-prev");
+    const nextButton = document.querySelector(".lightbox-next");
+
+    let currentImageIndex = 0;
+
+    function getVisibleTriggers() {
+        return lightboxTriggers.filter(btn => {
+            const item = btn.closest(".result-item");
+            return item && !item.classList.contains("result-hidden");
+        });
+    }
+
+    function openLightbox(index) {
+        const visibleTriggers = getVisibleTriggers();
+        if (!visibleTriggers.length) return;
+
+        currentImageIndex = (index + visibleTriggers.length) % visibleTriggers.length;
+        const trigger = visibleTriggers[currentImageIndex];
+        const card = trigger.closest(".premium-result-card");
+        const galleryImg = card ? card.querySelector(".result-img") : null;
+
+        if (galleryImg) {
+            lightboxImage.src = galleryImg.currentSrc || galleryImg.getAttribute("src") || "";
+            lightboxImage.alt = galleryImg.alt || "Result preview";
+        }
+
+        lightboxCaption.textContent = trigger.dataset.caption || "";
+
+        lightbox.classList.add("open");
+        lightbox.setAttribute("aria-hidden", "false");
+        document.body.classList.add("lightbox-open");
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove("open");
+        lightbox.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("lightbox-open");
+        lightboxImage.removeAttribute("src");
+    }
+
+    lightboxTriggers.forEach(function (button) {
+        button.addEventListener("click", function (e) {
+            e.preventDefault();
+            const visibleTriggers = getVisibleTriggers();
+            const index = visibleTriggers.indexOf(button);
+            if (index !== -1) {
+                openLightbox(index);
+            }
+        });
+    });
+
+    if (prevButton) prevButton.addEventListener("click", function (e) {
+        e.stopPropagation();
+        openLightbox(currentImageIndex - 1);
+    });
+
+    if (nextButton) nextButton.addEventListener("click", function (e) {
+        e.stopPropagation();
+        openLightbox(currentImageIndex + 1);
+    });
+
+    if (closeButton) closeButton.addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", function (event) {
+        if (event.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (!lightbox || !lightbox.classList.contains("open")) return;
+        if (event.key === "Escape") closeLightbox();
+        if (event.key === "ArrowLeft") openLightbox(currentImageIndex - 1);
+        if (event.key === "ArrowRight") openLightbox(currentImageIndex + 1);
+    });
+});
+
+</script>
+<!-- =========================================================
+     PREMIUM SCROLL TO TOP BUTTON
+     ========================================================= -->
+<button
+    id="scrollTopBtn"
+    class="scroll-top-btn"
+    type="button"
+    aria-label="Scroll to top"
+    title="Back to top"
+>
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- FLOATING WHATSAPP BUTTON (LEFT SIDE) -->
+<a href="https://wa.me/919148984367" class="whatsapp-float" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+</body>
+</html>

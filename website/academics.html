@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Explore academic programs at Lions P.U. College — Higher Primary Schoolto P.U. College."/>
+<title>Academics | Lions P.U. College</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="icon" type="image/svg+xml" href="images/lions-favicon.svg">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+
+<link href="css/style.css" rel="stylesheet"/>
+
+<style id="academics-cleanup">
+/* =========================================================
+   ACADEMICS PAGE — PREMIUM PROGRAM CARDS
+   Uses unique class names so older style.css overrides
+   cannot hide or distort these cards.
+   ========================================================= */
+
+.premium-academic-programs {
+    display: block !important;
+    width: 100% !important;
+    padding: 70px 0 90px !important;
+    background: linear-gradient(180deg, #f3f6fa 0%, #eef2f7 100%) !important;
+    position: relative !important;
+    clear: both !important;
+}
+
+.premium-academic-container {
+    width: 100% !important;
+    max-width: 1320px !important;
+    margin: 0 auto !important;
+    padding: 0 35px !important;
+}
+
+.premium-academic-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 30px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    align-items: stretch !important;
+}
+
+.premium-academic-card {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    background: #fff !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(27,58,107,.08) !important;
+    box-shadow: 0 12px 35px rgba(27,58,107,.09) !important;
+    transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease !important;
+}
+
+.premium-academic-card:hover {
+    transform: translateY(-9px) !important;
+    box-shadow: 0 25px 55px rgba(27,58,107,.17) !important;
+    border-color: rgba(245,166,35,.45) !important;
+}
+
+.premium-academic-image {
+    position: relative !important;
+    width: 100% !important;
+    height: 245px !important;
+    overflow: hidden !important;
+    background: #dfe5ee !important;
+}
+
+.premium-academic-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+    transition: transform .65s ease !important;
+}
+
+.premium-academic-card:hover .premium-academic-image img {
+    transform: scale(1.055) !important;
+}
+
+.premium-academic-overlay {
+    position: absolute !important;
+    inset: 0 !important;
+    background: linear-gradient(to top, rgba(7,29,61,.88) 0%, rgba(7,29,61,.38) 45%, rgba(7,29,61,.02) 78%) !important;
+    z-index: 1 !important;
+}
+
+.premium-academic-image-text {
+    position: absolute !important;
+    left: 25px !important;
+    bottom: 22px !important;
+    z-index: 2 !important;
+}
+
+.premium-academic-image-text span {
+    display: block !important;
+    margin-bottom: 6px !important;
+    color: #f5a623 !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    letter-spacing: 2px !important;
+}
+
+.premium-academic-image-text h3 {
+    margin: 0 !important;
+    color: #fff !important;
+    font-size: 25px !important;
+    font-weight: 700 !important;
+    line-height: 1.1 !important;
+}
+
+.premium-academic-body {
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 !important;
+    padding: 27px 26px 28px !important;
+    background: #fff !important;
+}
+
+.premium-academic-label {
+    color: #f5a623 !important;
+    font-size: 10px !important;
+    font-weight: 800 !important;
+    letter-spacing: 2px !important;
+    margin-bottom: 9px !important;
+}
+
+.premium-academic-body h2 {
+    margin: 0 0 10px !important;
+    color: #173765 !important;
+    font-size: 26px !important;
+    font-weight: 750 !important;
+    line-height: 1.15 !important;
+}
+
+.premium-academic-line {
+    width: 42px !important;
+    height: 3px !important;
+    background: #f5a623 !important;
+    margin-bottom: 18px !important;
+}
+
+.premium-academic-body p {
+    margin: 0 0 22px !important;
+    color: #64748b !important;
+    font-size: 13.5px !important;
+    line-height: 1.65 !important;
+}
+
+.premium-academic-features {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    margin-top: auto !important;
+}
+
+.premium-academic-features > div {
+    display: flex !important;
+    align-items: center !important;
+    min-height: 43px !important;
+    padding: 8px 10px !important;
+    border-radius: 8px !important;
+    background: #f7f9fc !important;
+    border: 1px solid #e4e9f0 !important;
+    transition: background .25s ease, border-color .25s ease, transform .25s ease !important;
+}
+
+.premium-academic-features > div:hover {
+    background: #fff8eb !important;
+    border-color: #f5a623 !important;
+    transform: translateY(-2px) !important;
+}
+
+.premium-academic-features i {
+    color: #f5a623 !important;
+    font-size: 13px !important;
+    width: 20px !important;
+    flex-shrink: 0 !important;
+}
+
+.premium-academic-features span {
+    color: #173765 !important;
+    font-size: 10.5px !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+}
+
+.premium-academic-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    align-self: flex-start !important;
+    margin-top: 22px !important;
+    padding: 10px 17px !important;
+    border-radius: 7px !important;
+    background: #173765 !important;
+    color: #fff !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    transition: background .25s ease, transform .25s ease !important;
+}
+
+.premium-academic-link:hover {
+    background: #f5a623 !important;
+    color: #173765 !important;
+    transform: translateX(4px) !important;
+}
+
+/* FLOATING WHATSAPP BUTTON (LEFT SIDE) */
+.whatsapp-float {
+    position: fixed;
+    bottom: 90px;
+    right: 28px;
+    z-index: 99999;
+    width: 55px;
+    height: 55px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #20ba5a;
+    color: #FFF;
+    transform: scale(1.08);
+}
+
+/* SCROLL TO TOP BUTTON (RIGHT SIDE - RAISED TO PREVENT OVERLAP) */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 95px;
+    right: 30px;
+    z-index: 99998;
+    width: 45px;
+    height: 45px;
+    background-color: var(--navy, #00338d);
+    color: #FFF;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.scroll-top-btn:hover {
+    background-color: var(--gold, #d4a843);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 1000px) {
+    .premium-academic-container {
+        padding: 0 25px !important;
+    }
+
+    .premium-academic-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 24px !important;
+    }
+}
+
+@media (max-width: 650px) {
+    .premium-academic-programs {
+        padding: 50px 0 65px !important;
+    }
+
+    .premium-academic-container {
+        padding: 0 18px !important;
+    }
+
+    .premium-academic-grid {
+        grid-template-columns: 1fr !important;
+        gap: 22px !important;
+    }
+
+    .premium-academic-image {
+        height: 220px !important;
+    }
+
+    .premium-academic-body {
+        padding: 24px 21px 25px !important;
+    }
+}
+</style>
+
+</head>
+<body class="about-page">
+<!-- UTILITY BAR -->
+<div class="utility-bar d-none d-md-block">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center gap-3">
+                <!--socil icon space-->
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <a href="https://wa.me/919148984367" target="_blank" rel="noopener noreferrer">
+                    <i class="fa fa-phone me-1"></i>
+                    +91 9148984367
+                </a>
+                <span class="divider">|</span>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to= lionspucollegesirsi@gmail.com" target="_blank" rel="noopener noreferrer">
+                    <i class="fa fa-envelope me-1"></i>
+                    lionspucollegesirsi@gmail.com
+                </a>
+                <span class="divider">|</span>
+                <a href="https://maps.google.com/?q=Lions+P.U.+College,+Lions+Nagar,+Sirsi,+Karnataka+581401" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+                    <i class="fa fa-location-dot me-1"></i>
+                    Sirsi, Karnataka
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg main-navbar sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+        <img src="images/lions-pu-college-logo.svg" alt="Lions PU College, Sirsi" class="d-inline-block align-text-top" />
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+
+
+
+           <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="academics.html" data-bs-toggle="dropdown" aria-expanded="false">Academics</a>
+              <ul class="dropdown-menu"><li><a class="dropdown-item" href="academics.html">Academics</a></li><li><a class="dropdown-item" href="coursess.html">P U Courses</a></li>
+              <li><a class="dropdown-item" href="results.html">Results</a></li>   <li>
+            <a class="dropdown-item" href="faculty.html">
+                Faculty
+            </a></ul> </li>
+            
+            
+            
+            <li class="nav-item"><a class="nav-link " href="admissions.html">Admissions</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " href="Campus.html" data-bs-toggle="dropdown" aria-expanded="false">Campus</a>
+              <ul class="dropdown-menu"><li><a class="dropdown-item" href="facilities.html">Facilities</a></li><li><a class="dropdown-item" href="gallery.html">Gallery</a></li></ul>
+            </li><li class="nav-item"><a class="nav-link " href="news.html">News & Events</a></li><li class="nav-item"><a class="nav-link " href="contact.html">Contact</a></li>
+      </ul>
+      <div class="ms-lg-4 mt-3 mt-lg-0">
+        <a href="admissions.html" class="btn-apply">Apply Now →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ACADEMICS HERO -->
+<section class="page-hero-banner">
+  <div class="container" style="position:relative;z-index:1">
+    <h1>Academics</h1>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="index.html">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Academics</li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<!-- =========================================================
+     ACADEMIC PROGRAMS
+     ========================================================= -->
+
+<section class="premium-academic-programs" aria-labelledby="premium-academic-heading">
+
+  <div class="premium-academic-container">
+
+    <div class="text-center mb-5">
+      <span class="academic-eyebrow">OUR PROGRAMS</span>
+      <h2 id="premium-academic-heading" class="section-heading">Choose Your Learning Path</h2>
+      <div class="section-underline centered"></div>
+      <p class="mx-auto" style="max-width:720px;color:#64748b;line-height:1.7;margin:0;">
+        From foundational learning to pre-university education, every stage is designed
+        to build knowledge, confidence, skills and a strong future.
+      </p>
+    </div>
+
+    <div class="premium-academic-grid">
+
+      <!-- Higher Primary School-->
+      <article class="premium-academic-card">
+
+        <div class="premium-academic-image">
+          <img src="images/Higher Primary School.png" alt="Higher Primary Schoolstudents">
+          <div class="premium-academic-overlay"></div>
+
+          <!-- <div class="premium-academic-image-text">
+            <h3>Higher Primary School</h3>
+          </div> -->
+        </div>
+
+        <div class="premium-academic-body">
+
+          <div class="premium-academic-label">CLASSES 6–8</div>
+
+          <h2>Higher Primary School</h2>
+
+          <div class="premium-academic-line"></div>
+
+          <p>
+            A stage of discovery, curiosity and confidence. Students build strong
+            academic foundations while exploring science, mathematics, languages,
+            social studies, arts and technology.
+          </p>
+
+          <div class="premium-academic-features">
+
+            <div>
+              <i class="fa fa-flask"></i>
+              <span>Foundation Learning</span>
+            </div>
+
+            <div>
+              <i class="fa fa-code"></i>
+              <span>Coding &amp; Robotics</span>
+            </div>
+
+            <div>
+              <i class="fa fa-futbol"></i>
+              <span>Sports &amp; Activities</span>
+            </div>
+
+            <div>
+              <i class="fa fa-lightbulb"></i>
+              <span>Skill Development</span>
+            </div>
+
+          </div>
+        </div>
+      </article>
+
+
+      <!-- HIGH SCHOOL -->
+      <article class="premium-academic-card">
+
+        <div class="premium-academic-image">
+          <img src="images/Studay.png" alt="High School programs">
+          <div class="premium-academic-overlay"></div>
+
+          <!-- <div class="premium-academic-image-text">
+            <h3>High School</h3>
+          </div> -->
+        </div>
+
+        <div class="premium-academic-body">
+
+          <div class="premium-academic-label">CLASSES 9–10</div>
+
+          <h2>High School</h2>
+
+          <div class="premium-academic-line"></div>
+
+          <p>
+            A focused academic environment that prepares students for board
+            examinations, higher education and the challenges of tomorrow.
+            Learning is supported by practical exposure and individual guidance.
+          </p>
+
+          <div class="premium-academic-features">
+
+            <div>
+              <i class="fa fa-book-open"></i>
+              <span>Strong Academics</span>
+            </div>
+
+            <div>
+              <i class="fa fa-microscope"></i>
+              <span>Practical Learning</span>
+            </div>
+
+            <div>
+              <i class="fa fa-trophy"></i>
+              <span>Exam Preparation</span>
+            </div>
+
+            <div>
+              <i class="fa fa-user-graduate"></i>
+              <span>Career Foundation</span>
+            </div>
+
+          </div>
+        </div>
+      </article>
+
+
+      <!-- P.U. COLLEGE -->
+      <article class="premium-academic-card">
+
+        <div class="premium-academic-image">
+          <img src="images/Pu_Acadamic.png" alt="P.U. College students">
+          <div class="premium-academic-overlay"></div>
+
+          <!-- <div class="premium-academic-image-text">
+            <h3>P.U. College</h3>
+          </div> -->
+        </div>
+
+        <div class="premium-academic-body">
+
+          <div class="premium-academic-label">PRE-UNIVERSITY EDUCATION</div>
+
+          <h2>P.U. College</h2>
+
+          <div class="premium-academic-line"></div>
+
+          <p>
+            A career-focused learning environment where students strengthen
+            subject knowledge, prepare for competitive examinations and take
+            confident steps towards higher education.
+          </p>
+
+          <div class="premium-academic-features">
+
+            <div>
+              <i class="fa fa-atom"></i>
+              <span>Science Programs</span>
+            </div>
+
+            <div>
+              <i class="fa fa-calculator"></i>
+              <span>Commerce &amp; Business</span>
+            </div>
+
+            <div>
+              <i class="fa fa-graduation-cap"></i>
+              <span>Higher Education</span>
+            </div>
+
+            <div>
+              <i class="fa fa-bullseye"></i>
+              <span>Career Preparation</span>
+            </div>
+
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+</section>
+
+
+<!-- CO-CURRICULAR -->
+<section class="academic-cocurricular">
+
+  <div class="container">
+
+    <div class="academic-section-heading reveal">
+
+      <span class="academic-eyebrow">BEYOND THE CLASSROOM</span>
+
+      <h2>Education Beyond Academics</h2>
+
+      <div class="section-underline centered"></div>
+
+      <p>
+        We encourage students to explore their talents, develop confidence
+        and become well-rounded individuals.
+      </p>
+
+    </div>
+
+
+    <div class="row g-4">
+
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="academic-feature-card">
+          <div class="academic-feature-icon">
+            <i class="fa fa-music"></i>
+          </div>
+          <h4>Music & Dance</h4>
+          <p>
+            Vocal, instrumental and classical dance opportunities.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="academic-feature-card">
+          <div class="academic-feature-icon">
+            <i class="fa fa-palette"></i>
+          </div>
+          <h4>Visual Arts</h4>
+          <p>
+            Painting, drawing, creative arts and artistic expression.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="academic-feature-card">
+          <div class="academic-feature-icon">
+            <i class="fa fa-futbol"></i>
+          </div>
+          <h4>Sports</h4>
+          <p>
+            Sports and physical activities that encourage teamwork and
+            discipline.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="academic-feature-card">
+          <div class="academic-feature-icon">
+            <i class="fa fa-microchip"></i>
+          </div>
+          <h4>Robotics & Coding</h4>
+          <p>
+            STEM learning, coding activities and technology exploration.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="academic-feature-card">
+          <div class="academic-feature-icon">
+            <i class="fa fa-comments"></i>
+          </div>
+          <h4>Communication</h4>
+          <p>
+            Public speaking, debate and activities that build confidence.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="academic-feature-card">
+          <div class="academic-feature-icon">
+            <i class="fa fa-users"></i>
+          </div>
+          <h4>Leadership</h4>
+          <p>
+            Student leadership opportunities that build responsibility
+            and character.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ACADEMIC APPROACH -->
+<section class="academic-approach">
+
+  <div class="container">
+
+    <div class="row align-items-center g-5">
+
+      <div class="col-lg-6 reveal">
+
+        <span class="academic-eyebrow">
+          OUR APPROACH
+        </span>
+
+        <h2>
+          Building Strong Foundations
+          for a Brighter Future
+        </h2>
+
+        <div class="section-underline"></div>
+
+        <p>
+          Our approach combines academic excellence with practical
+          learning, creativity, discipline and personal development.
+        </p>
+
+        <div class="approach-list">
+
+          <div>
+            <span>01</span>
+            <strong>Concept-Based Learning</strong>
+          </div>
+
+          <div>
+            <span>02</span>
+            <strong>Practical Exposure</strong>
+          </div>
+
+          <div>
+            <span>03</span>
+            <strong>Individual Guidance</strong>
+          </div>
+
+          <div>
+            <span>04</span>
+            <strong>Future-Focused Education</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-lg-6 reveal">
+
+        <div class="academic-journey-card">
+
+          <div class="journey-line"></div>
+
+          <div class="journey-item">
+            <span>01</span>
+            <div>
+              <strong>Discover</strong>
+              <p>Explore interests and develop curiosity.</p>
+            </div>
+          </div>
+
+          <div class="journey-item">
+            <span>02</span>
+            <div>
+              <strong>Develop</strong>
+              <p>Build knowledge, skills and confidence.</p>
+            </div>
+          </div>
+
+          <div class="journey-item">
+            <span>03</span>
+            <div>
+              <strong>Achieve</strong>
+              <p>Work towards academic and personal goals.</p>
+            </div>
+          </div>
+
+          <div class="journey-item">
+            <span>04</span>
+            <div>
+              <strong>Lead</strong>
+              <p>Step forward with Purpose and confidence.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ADMISSIONS CTA -->
+<section class="academic-cta">
+
+  <div class="container">
+
+    <div class="academic-cta-content reveal">
+
+      <span class="academic-eyebrow">
+        START YOUR JOURNEY
+      </span>
+
+      <h2>Find the Right Academic Path for Your Child</h2>
+
+      <p>
+        Explore our academic programs and discover the learning journey
+        that fits your child's goals.
+      </p>
+
+      <a href="admissions.html" class="academic-cta-btn">
+        Explore Admissions
+        <i class="fa fa-arrow-right"></i>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- FOOTER -->
+<footer class="site-footer premium-footer">
+
+  <div class="container">
+
+    <div class="premium-footer-main">
+
+      <!-- BRAND -->
+      <div class="footer-brand">
+
+        <a href="index.html" class="footer-brand-logo">
+          <img src="images/lions_logo.png" alt="Lions P.U. College">
+        </a>
+
+        <p>
+          Building future leaders with excellence, values,
+          and innovation 
+        </p>
+
+        <div class="footer-social">
+          <a href="https://www.facebook.com/lionspucollege.sirsi" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+
+          <a href="https://www.instagram.com/lionspucollegesirsi?igsi=NTY0eTZoNGZvdWpq" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+
+          <a href="https://www.youtube.com/@sirsilionsschools" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+
+          <a href="#" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+
+      </div>
+
+
+      <!-- EXPLORE -->
+      <div class="premium-footer-column">
+
+        <h6>Explore</h6>
+
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="academics.html">Academics</a></li>
+          <li><a href="admissions.html">Admissions</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+      </div>
+
+
+      <!-- ACADEMICS -->
+      <div class="premium-footer-column">
+
+        <h6>Academics</h6>
+
+        <ul>
+          <li><a href="academics.html">Academic Programs</a></li>
+          <li><a href="academics.html">Co-Curricular</a></li>
+          <li><a href="academics.html">Our Approach</a></li>
+          <li><a href="results.html">Board Results</a></li>
+          <li><a href="gallery.html">Campus Experience</a></li>
+        </ul>
+
+      </div>
+
+
+      <!-- Campus -->
+      <div class="premium-footer-column">
+
+        <h6>Campus</h6>
+
+        <ul>
+          <li><a href="facilities.html">Facilities</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="news.html">News & Events</a></li>
+          <li><a href="contact.html">Enquire Now</a></li>
+          <li><a href="admissions.html">Apply Now</a></li>
+        </ul>
+
+      </div>
+
+
+      <!-- CONTACT -->
+      <div class="premium-footer-contact">
+
+        <h6>Get In Touch</h6>
+
+        <div class="footer-contact-item">
+
+          <span class="footer-contact-icon">
+            <a href="https://maps.google.com/?q=Lions+P.U.+College,+Lions+Nagar,+Sirsi,+Karnataka+581401" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;"><i class="fa fa-location-dot"></i></a>
+          </span>
+
+          <div>
+            <strong>Visit Us</strong>
+            <p><a href="https://maps.google.com/?q=Lions+P.U.+College,+Lions+Nagar,+Sirsi,+Karnataka+581401" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Lions Nagar, Sirsi, Karnataka – 581401</a></p>
+          </div>
+
+        </div>
+
+
+        <div class="footer-contact-item">
+
+          <span class="footer-contact-icon">
+            <a href="https://wa.me/919148984367" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;"><i class="fa fa-phone"></i></a>
+          </span>
+
+          <div>
+            <strong>Call Us</strong>
+            <p><a href="https://wa.me/919148984367" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">+91 9148984367</a> / <a href="tel:+919482189355" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">+91 9482189355</a></p>
+          </div>
+
+        </div>
+
+
+        <div class="footer-contact-item">
+
+          <span class="footer-contact-icon">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Sirsilions94@gmail.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;"><i class="fa fa-envelope"></i></a>
+          </span>
+
+          <div>
+            <strong>Email</strong>
+            <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to= lionspucollegesirsi@gmail.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;"> lionspucollegesirsi@gmail.com</a></p>
+          </div>
+
+        </div>
+
+
+        <div class="footer-contact-item">
+
+          <span class="footer-contact-icon">
+            <i class="fa fa-clock"></i>
+          </span>
+
+          <div>
+            <strong>Office Hours</strong>
+            <p>Mon–Sat: 9:00 AM – 5:00 PM</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- FOOTER BOTTOM -->
+  <div class="premium-footer-bottom">
+
+    <div class="container">
+
+      <div class="footer-bottom-inner">
+
+        <span>
+          © 2026 Lions P.U. College. All Rights Reserved.
+        </span>
+<span class="footer-credit">
+  Designed &amp; Developed by
+  <a href="https://www.ausinch.com" target="_blank" rel="noopener noreferrer">
+    <strong>AUSINCH</strong>
+  </a>
+</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/app.js"></script>
+
+<!-- =========================================================
+     PREMIUM SCROLL TO TOP BUTTON
+     ========================================================= -->
+<button
+    id="scrollTopBtn"
+    class="scroll-top-btn"
+    type="button"
+    aria-label="Scroll to top"
+    title="Back to top"
+>
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- FLOATING WHATSAPP BUTTON (LEFT SIDE) -->
+<a href="https://wa.me/919148984367" class="whatsapp-float" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+// Lions PU College — News & Events CMS
+// Database: MySQL | ORM: Prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+}
+
+enum ContentStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum MediaType {
+  IMAGE
+  VIDEO
+}
+
+enum MediaSourceType {
+  UPLOAD
+  EXTERNAL_URL
+  YOUTUBE
+  VIMEO
+}
+
+model User {
+  id           Int      @id @default(autoincrement())
+  name         String   @db.VarChar(100)
+  email        String   @unique @db.VarChar(255)
+  passwordHash String   @map("password_hash") @db.VarChar(255)
+  role         Role     @default(ADMIN)
+  isActive     Boolean  @default(true) @map("is_active")
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  news      News[]
+  events    Event[]
+  auditLogs AuditLog[]
+
+  @@map("users")
+}
+
+model News {
+  id          Int           @id @default(autoincrement())
+  title       String        @db.VarChar(255)
+  slug        String        @unique @db.VarChar(255)
+  summary     String?       @db.Text
+  content     String        @db.LongText
+  status      ContentStatus @default(DRAFT)
+  publishedAt DateTime?     @map("published_at")
+  createdBy   Int           @map("created_by")
+  createdAt   DateTime      @default(now()) @map("created_at")
+  updatedAt   DateTime      @updatedAt @map("updated_at")
+  deletedAt   DateTime?     @map("deleted_at")
+
+  author User    @relation(fields: [createdBy], references: [id], onDelete: Restrict)
+  media  Media[]
+
+  @@index([status])
+  @@index([publishedAt])
+  @@index([status, publishedAt])
+  @@index([createdBy])
+  @@index([deletedAt])
+  @@map("news")
+}
+
+model Event {
+  id          Int           @id @default(autoincrement())
+  title       String        @db.VarChar(255)
+  slug        String        @unique @db.VarChar(255)
+  description String        @db.LongText
+  eventDate   DateTime      @map("event_date")
+  location    String?       @db.VarChar(255)
+  status      ContentStatus @default(DRAFT)
+  publishedAt DateTime?     @map("published_at")
+  createdBy   Int           @map("created_by")
+  createdAt   DateTime      @default(now()) @map("created_at")
+  updatedAt   DateTime      @updatedAt @map("updated_at")
+  deletedAt   DateTime?     @map("deleted_at")
+
+  author User    @relation(fields: [createdBy], references: [id], onDelete: Restrict)
+  media  Media[]
+
+  @@index([status])
+  @@index([eventDate])
+  @@index([publishedAt])
+  @@index([status, eventDate])
+  @@index([createdBy])
+  @@index([deletedAt])
+  @@map("events")
+}
+
+model Media {
+  id            Int             @id @default(autoincrement())
+  newsId        Int?            @map("news_id")
+  eventId       Int?            @map("event_id")
+  mediaType     MediaType       @map("media_type")
+  sourceType    MediaSourceType @map("source_type")
+  url           String          @db.Text
+  thumbnailUrl  String?         @map("thumbnail_url") @db.Text
+  altText       String?         @map("alt_text") @db.VarChar(255)
+  sortOrder     Int             @default(0) @map("sort_order")
+  createdAt     DateTime        @default(now()) @map("created_at")
+  updatedAt     DateTime        @updatedAt @map("updated_at")
+
+  news  News?  @relation(fields: [newsId], references: [id], onDelete: Cascade)
+  event Event? @relation(fields: [eventId], references: [id], onDelete: Cascade)
+
+  @@index([newsId])
+  @@index([eventId])
+  @@index([newsId, sortOrder])
+  @@index([eventId, sortOrder])
+  @@map("media")
+}
+
+model AuditLog {
+  id         Int      @id @default(autoincrement())
+  userId     Int      @map("user_id")
+  action     String   @db.VarChar(50)
+  entityType String   @map("entity_type") @db.VarChar(50)
+  entityId   Int      @map("entity_id")
+  metadata   Json?
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Restrict)
+
+  @@index([userId])
+  @@index([entityType, entityId])
+  @@index([createdAt])
+  @@map("audit_logs")
+}
