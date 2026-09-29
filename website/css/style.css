@@ -576,6 +576,16 @@ body {
   transition: transform 0.3s ease;
 }
 
+.news-img-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: linear-gradient(135deg, var(--navy, #1B3A6B), var(--navy-mid, #234a88));
+  color: var(--gold, #F5A623);
+  font-size: 34px;
+}
+
 .news-card:hover .news-img {
   transform: scale(1.05);
 }

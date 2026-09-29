@@ -17,8 +17,9 @@
   var grid = document.getElementById("newsEventsGrid");
   var paginationEl = document.getElementById("newsPagination");
   var statusEl = document.getElementById("newsEventsStatus");
+  var homeGrid = document.getElementById("homeNewsEventsGrid");
 
-  if (!grid) return;
+  if (!grid && !homeGrid) return;
 
   var items = [];
   var currentPage = 1;
@@ -103,14 +104,16 @@
         });
 
         if (items.length === 0) {
-          grid.innerHTML = "";
+          if (grid) grid.innerHTML = "";
           if (paginationEl) paginationEl.innerHTML = "";
           if (statusEl) statusEl.textContent = "No news or events have been published yet. Please check back soon.";
+          if (homeGrid) setHomeMessage("No news or events have been published yet. Please check back soon.");
           return;
         }
 
         if (statusEl) statusEl.textContent = "";
-        renderPage(1);
+        if (grid) renderPage(1);
+        if (homeGrid) renderHomePreview(items);
       })
       .catch(function (err) {
         // eslint-disable-next-line no-console
@@ -119,7 +122,48 @@
           statusEl.textContent =
             "We couldn't load the latest news & events right now. Please try again shortly, or contact the college office.";
         }
+        if (homeGrid) setHomeMessage("We couldn't load the latest news and events right now. Please try again shortly.");
       });
+  }
+
+  function formatHomeDate(iso) {
+    if (!iso) return "";
+    var date = new Date(iso);
+    if (isNaN(date.getTime())) return "";
+    return date.toLocaleDateString("en-IN", { day: "2-digit", month: "short" });
+  }
+
+  function setHomeMessage(message) {
+    homeGrid.innerHTML = '<div class="col-12 text-center text-muted py-3">' + escapeHtml(message) + "</div>";
+  }
+
+  function homeCardHtml(item) {
+    var dateLabel = formatHomeDate(item.date);
+    var imageBlock = item.image
+      ? '<img src="' + escapeHtml(item.image.src) + '" alt="' + escapeHtml(item.image.alt || item.title) + '" class="news-img">'
+      : '<div class="news-img news-img-fallback" aria-hidden="true"><i class="fa ' +
+        (item.type === "EVENT" ? "fa-calendar-days" : "fa-newspaper") +
+        '"></i></div>';
+
+    return (
+      '<div class="col-md-4 reveal in">' +
+        '<div class="news-card">' +
+          '<div class="news-img-wrap">' +
+            (dateLabel ? '<span class="news-date-badge">' + escapeHtml(dateLabel) + '</span>' : '') +
+            imageBlock +
+          '</div>' +
+          '<div class="news-body">' +
+            '<h5>' + escapeHtml(item.title) + '</h5>' +
+            '<p>' + escapeHtml(item.description) + '</p>' +
+            '<a href="news.html" class="btn-learn-more"> Read More <i class="fa fa-arrow-right"></i></a>' +
+          '</div>' +
+        '</div>' +
+      '</div>'
+    );
+  }
+
+  function renderHomePreview(contentItems) {
+    homeGrid.innerHTML = contentItems.slice(0, 3).map(homeCardHtml).join("");
   }
 
   function cardHtml(item) {
