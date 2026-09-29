@@ -32,11 +32,13 @@ const storage = multer.diskStorage({
 export const uploadMiddleware = multer({
   storage,
   limits: { fileSize: env.maxUploadSizeMb * 1024 * 1024 },
+
   fileFilter(_req, file, cb) {
     if (!ALLOWED_MIME.has(file.mimetype)) {
-      cb(AppError.badRequest(`Unsupported file type: ${file.mimetype}`) as unknown as null);
+      cb(AppError.badRequest(`Unsupported file type: ${file.mimetype}`));
       return;
     }
+
     cb(null, true);
   },
 }).single("file");

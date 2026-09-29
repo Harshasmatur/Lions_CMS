@@ -5,7 +5,7 @@
   "type": "commonjs",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "build": "tsc -p tsconfig.json && node -e \"const fs=require('fs'); const path=require('path'); const src=path.join(process.cwd(),'prisma'); const dest=path.join(process.cwd(),'dist','..','prisma'); fs.cpSync(src,dest,{recursive:true,force:true});\"",
+    "build": "tsc -p tsconfig.json && node -e \"const fs=require('fs'); const path=require('path'); const src=path.join(process.cwd(),'prisma'); const dest=path.join(process.cwd(),'dist','prisma'); fs.cpSync(src,dest,{recursive:true,force:true});\"",
     "start": "node dist/server.js",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
